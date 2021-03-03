@@ -40,12 +40,8 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="433-4338166_thor-png-image-with-transparent-background-thor-marvel" translatesAutoresizingMaskIntoConstraints="NO" id="XNS-Lr-80O">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="325"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mv9-3Z-7sd">
-                                                    <rect key="frame" x="63.5" y="255" width="73" height="35"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="73" id="Kdt-i7-4MI"/>
-                                                        <constraint firstAttribute="height" constant="35" id="V9i-Xg-gSr"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mv9-3Z-7sd">
+                                                    <rect key="frame" x="0.0" y="253" width="200" height="37"/>
                                                     <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="28"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -58,8 +54,10 @@
                                                 <constraint firstItem="XNS-Lr-80O" firstAttribute="leading" secondItem="5gg-wh-Ws7" secondAttribute="leading" id="h4c-le-StW"/>
                                                 <constraint firstItem="Mv9-3Z-7sd" firstAttribute="centerX" secondItem="5gg-wh-Ws7" secondAttribute="centerX" id="hvY-7W-2b1"/>
                                                 <constraint firstAttribute="trailing" secondItem="XNS-Lr-80O" secondAttribute="trailing" id="mKu-BY-kUe"/>
+                                                <constraint firstAttribute="trailing" secondItem="Mv9-3Z-7sd" secondAttribute="trailing" id="mPt-8v-1gz"/>
                                                 <constraint firstAttribute="bottom" secondItem="Mv9-3Z-7sd" secondAttribute="bottom" constant="35" id="sDJ-Ur-GUF"/>
                                                 <constraint firstAttribute="bottom" secondItem="XNS-Lr-80O" secondAttribute="bottom" id="xlb-AB-Vzt"/>
+                                                <constraint firstItem="Mv9-3Z-7sd" firstAttribute="leading" secondItem="5gg-wh-Ws7" secondAttribute="leading" id="zbI-Ca-abv"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" red="0.66904138619999998" green="0.19440627669999999" blue="0.31721107879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -11,19 +11,27 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBOutlet weak var Collection: UICollectionView!
     @IBOutlet weak var Tabela: UITableView!
-    var cellScale: CGFloat = 0.6
-    
+
+    var Data = [Entry]()
     let request = API()
+    var from = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        request.requestData(from: nil)
+        request.requestData(from: nil) { (result) in
+            self.Data.append(result)
+            self.Tabela.reloadData()
+            self.Collection.reloadData()
+        }
+
         
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        if !Data.isEmpty {
+            return Data[0].data.result.count - 5
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -31,18 +39,41 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         cell.layer.cornerRadius = 10.0
         cell.layer.masksToBounds = true
         
+        cell.nameCharacter.text = Data[0].data.result[indexPath.row].name
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if !Data.isEmpty {
+            return Data[0].data.result.count - 5
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Tabela.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! TableViewCell
         
+        cell.personagemLb.text = Data[0].data.result[indexPath.row+5].name
+        
+        
         return cell
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            let offsetY = scrollView.contentOffset.y
+            let contentHeight = scrollView.contentSize.height
+
+        if (offsetY > contentHeight - scrollView.frame.height * 0.6){
+                from += 10
+                request.requestData(from: from) { (result) in
+                    self.Data[0].data.result.append(contentsOf: result.data.result)
+                    self.Tabela.reloadData()
+                    print("Total: \(self.from)")
+                    return
+                }
+            }
+        }
 
 }
 

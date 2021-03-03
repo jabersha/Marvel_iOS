@@ -10,8 +10,11 @@ import Alamofire
 
 class API{
     
+    var dataCharacaters = Entry.self
     
-    func requestData(from:Int?){
+    func requestData(from: Int?, completion: @escaping (_ result: Entry) -> ()){
+            
+        var teste = [Entry]()
 
             var parameters:Parameters = [String : Any]()
             parameters["ts"] = "1"
@@ -31,13 +34,16 @@ class API{
         AF.request(url, method: .get, parameters: parameters , encoding: URLEncoding.default, headers: nil)
             .responseJSON { (response) in
                 switch response.result {
-                case .success(let value):
-                    print ("return as JSON using swiftyJson is: \(value)")
+                case .success( _):
                     
                     do {
                         let decoder = JSONDecoder()
-                        let teste = try decoder.decode(Entry.self, from: response.data!)
-                        print(teste.data.result[1].name)
+                        let allData = try decoder.decode(Entry.self, from: response.data!)
+                        print(allData.data.result[1].name)
+                        teste.append(allData)
+                        completion(allData)
+
+                        
                         
                     } catch {
                         print(error)
@@ -48,6 +54,5 @@ class API{
                     print ("error: \(error)")
                 }
             }
-    
     }
 }
