@@ -29,7 +29,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if !Data.isEmpty {
-            return Data[0].data.result.count - 5
+            return 5
         }
         return 0
     }
@@ -40,6 +40,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         cell.layer.masksToBounds = true
         
         cell.nameCharacter.text = Data[0].data.result[indexPath.row].name
+        
+        let link = "\(Data[0].data.result[indexPath.row].thumb.path)/portrait_incredible.\(Data[0].data.result[indexPath.row].thumb.extensionThumb)"
+        let linkFinal = link.replacingOccurrences(of: "http", with: "https")
+        print(linkFinal)
+        if let imageURL = URL(string: linkFinal){
+                        let data = try? Foundation.Data(contentsOf: imageURL)
+                        if let data = data {
+                            let image = UIImage(data: data)
+                            DispatchQueue.main.async {
+                                cell.img.image = image
+                            }
+                        }
+                   
+                }
         
         return cell
     }
@@ -55,6 +69,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cell = Tabela.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! TableViewCell
         
         cell.personagemLb.text = Data[0].data.result[indexPath.row+5].name
+        
+
+        let link = "\(Data[0].data.result[indexPath.row+5].thumb.path)/landscape_incredible.\(Data[0].data.result[indexPath.row+5].thumb.extensionThumb)"
+        let linkFinal = link.replacingOccurrences(of: "http", with: "https")
+        print(linkFinal)
+        if let imageURL = URL(string: linkFinal){
+                        let data = try? Foundation.Data(contentsOf: imageURL)
+                        if let data = data {
+                            let image = UIImage(data: data)
+                            DispatchQueue.main.async {
+                                cell.img.image = image
+                            }
+                        }
+                   
+                }
         
         
         return cell

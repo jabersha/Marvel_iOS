@@ -25,7 +25,7 @@ class API{
             if from != nil{
                 parameters["offset"] = "\(10+from!)"
             } else {
-                parameters["offset"] = "10"
+                parameters["offset"] = "0"
             }
             
 

@@ -72,30 +72,33 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="W1L-0X-Vch"/>
                                 </connections>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tcm-vC-0ry">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="240" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tcm-vC-0ry">
                                 <rect key="frame" x="20" y="452" width="374" height="388"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableCell" rowHeight="120" id="jeZ-yS-1TH" customClass="TableViewCell" customModule="Marvel" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableCell" rowHeight="200" id="jeZ-yS-1TH" customClass="TableViewCell" customModule="Marvel" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jeZ-yS-1TH" id="3Qo-vC-Pls">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="433-4338166_thor-png-image-with-transparent-background-thor-marvel" translatesAutoresizingMaskIntoConstraints="NO" id="c3h-kc-rx9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="433-4338166_thor-png-image-with-transparent-background-thor-marvel" translatesAutoresizingMaskIntoConstraints="NO" id="c3h-kc-rx9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4s-bq-HLW">
-                                                    <rect key="frame" x="298" y="0.0" width="56" height="27.5"/>
-                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4s-bq-HLW">
+                                                    <rect key="frame" x="120" y="0.0" width="234" height="44.5"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
                                                     <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
+                                                    <color key="highlightedColor" systemColor="systemIndigoColor"/>
+                                                    <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <size key="shadowOffset" width="3" height="1"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="c3h-kc-rx9" firstAttribute="leading" secondItem="3Qo-vC-Pls" secondAttribute="leading" id="GFw-FW-RZ6"/>
                                                 <constraint firstAttribute="bottom" secondItem="c3h-kc-rx9" secondAttribute="bottom" id="QSZ-aG-jXR"/>
+                                                <constraint firstItem="m4s-bq-HLW" firstAttribute="leading" secondItem="3Qo-vC-Pls" secondAttribute="leading" constant="120" id="R6V-Em-O9s"/>
                                                 <constraint firstItem="m4s-bq-HLW" firstAttribute="top" secondItem="3Qo-vC-Pls" secondAttribute="top" id="SWt-m8-Azx"/>
                                                 <constraint firstItem="c3h-kc-rx9" firstAttribute="top" secondItem="3Qo-vC-Pls" secondAttribute="top" id="lKf-Va-IVW"/>
                                                 <constraint firstAttribute="trailing" secondItem="m4s-bq-HLW" secondAttribute="trailing" constant="20" symbolic="YES" id="t1X-jj-sOT"/>
