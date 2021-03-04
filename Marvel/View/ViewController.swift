@@ -15,16 +15,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     var Data = [Entry]()
     let request = API()
+    var imagemTeste = [UIImage]()
     var from = 0
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let centerX = view.center.x
-        UIView.animate(withDuration: 1.0) {
-            self.Tabela.center.x = centerX
-        }
         
         request.requestData(from: nil) { (result) in
             self.Data.append(result)
@@ -80,36 +77,38 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
          switch response.result {
           case .success(let responseData):
             cell.img.image = UIImage(data: responseData!, scale:1)
-
+            self.imagemTeste.append(UIImage(data: responseData!, scale:1)!)
           case .failure(let error):
               print("error--->",error)
           }
         }
+
         
         cell.personagemLb.text = Data[0].data.result[indexPath.row+5].name
 
         
         
+        
         return cell
     }
+
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
             let offsetY = scrollView.contentOffset.y
             let contentHeight = scrollView.contentSize.height
 
         if (offsetY > contentHeight - scrollView.frame.height * 1) {
-                loadMore()
+            loadMore()
+            self.Tabela.reloadData()
+
             }
         }
     
     func loadMore(){
-        from += 10
-        request.requestData(from: nil) { (result) in
+        from += 15
+        request.requestData(from: from) { (result) in
             self.Data[0].data.result.append(contentsOf: result.data.result)
-            self.Tabela.reloadData()
-            self.Tabela.alwaysBounceVertical = false
             print("Total: \(self.from)")
-            return
         }
     }
     
@@ -134,7 +133,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = Tabela.indexPathForSelectedRow{
-           
+            
             let detailVC = segue.destination as! DescriptionViewController
             let url = convertURL(link: Data[0].data.result[indexPath.row+5].thumb.path, extensionImg: Data[0].data.result[indexPath.row].thumb.extensionThumb, type: "SV")
             
@@ -143,6 +142,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             detailVC.imgUrl = url
             }
     }
+    
 
 }
     

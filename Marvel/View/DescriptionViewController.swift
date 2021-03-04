@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Hero
 
 class DescriptionViewController: UIViewController {
 
@@ -20,6 +21,11 @@ class DescriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hero.isEnabled = true
+        nameLb.hero.id = "name"
+        img.hero.id = "img"
+        descriptionLb.hero.modifiers = [.cascade]
         
         nameLb.text = name
         if descriptionCharacters != ""{

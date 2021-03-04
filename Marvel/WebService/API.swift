@@ -20,10 +20,10 @@ class API{
             parameters["ts"] = "1"
             parameters["apikey"] = "a483c4863e16947858e3015be24d081f"
             parameters["hash"] = "d209e8995ad3ec568be381ca92591ba2"
-            parameters["limit"] = "15"
+            parameters["limit"] = "10"
         
             if from != nil{
-                parameters["offset"] = "\(15+from!)"
+                parameters["offset"] = "\(10)"
             } else {
                 parameters["offset"] = "0"
             }
@@ -39,7 +39,6 @@ class API{
                     do {
                         let decoder = JSONDecoder()
                         let allData = try decoder.decode(Entry.self, from: response.data!)
-                        print(allData.data.result[1].name)
                         teste.append(allData)
                         completion(allData)
 

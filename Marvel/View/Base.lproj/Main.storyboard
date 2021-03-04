@@ -64,7 +64,6 @@
                                         <connections>
                                             <outlet property="img" destination="XNS-Lr-80O" id="npM-Lk-Ent"/>
                                             <outlet property="nameCharacter" destination="Mv9-3Z-7sd" id="ZV8-ct-riF"/>
-                                            <segue destination="cSU-wK-LZw" kind="presentation" id="eXi-qW-0VJ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -219,9 +218,6 @@
             <point key="canvasLocation" x="902.89855072463774" y="57.589285714285708"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="eXi-qW-0VJ"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="unnamed" width="512" height="206"/>
         <systemColor name="labelColor">

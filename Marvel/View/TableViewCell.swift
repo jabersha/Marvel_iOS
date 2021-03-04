@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Hero
 
 class TableViewCell: UITableViewCell {
     
@@ -15,6 +16,8 @@ class TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        personagemLb.hero.id = "name"
+        img.hero.id = "img"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
