@@ -6,7 +6,6 @@ target 'Marvel' do
   use_frameworks!
 
   pod 'Alamofire', '~> 5.2'
-
   # Pods for Marvel
 
   target 'MarvelTests' do

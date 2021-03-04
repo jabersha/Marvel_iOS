@@ -37,7 +37,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="325"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="433-4338166_thor-png-image-with-transparent-background-thor-marvel" translatesAutoresizingMaskIntoConstraints="NO" id="XNS-Lr-80O">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XNS-Lr-80O">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="325"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mv9-3Z-7sd">
@@ -60,10 +60,11 @@
                                                 <constraint firstItem="Mv9-3Z-7sd" firstAttribute="leading" secondItem="5gg-wh-Ws7" secondAttribute="leading" id="zbI-Ca-abv"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" red="0.66904138619999998" green="0.19440627669999999" blue="0.31721107879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <connections>
                                             <outlet property="img" destination="XNS-Lr-80O" id="npM-Lk-Ent"/>
                                             <outlet property="nameCharacter" destination="Mv9-3Z-7sd" id="ZV8-ct-riF"/>
+                                            <segue destination="cSU-wK-LZw" kind="presentation" id="eXi-qW-0VJ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -83,7 +84,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="433-4338166_thor-png-image-with-transparent-background-thor-marvel" translatesAutoresizingMaskIntoConstraints="NO" id="c3h-kc-rx9">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c3h-kc-rx9">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4s-bq-HLW">
@@ -105,9 +106,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="c3h-kc-rx9" secondAttribute="trailing" id="uD6-26-kOh"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <connections>
                                             <outlet property="img" destination="c3h-kc-rx9" id="2QZ-Xm-URZ"/>
                                             <outlet property="personagemLb" destination="m4s-bq-HLW" id="fB0-dv-up6"/>
+                                            <segue destination="cSU-wK-LZw" kind="presentation" id="ybi-O9-Ibx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -159,12 +162,73 @@
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="57.589285714285708"/>
         </scene>
+        <!--Description View Controller-->
+        <scene sceneID="2CK-au-hR7">
+            <objects>
+                <viewController id="cSU-wK-LZw" customClass="DescriptionViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2h8-8g-8ix">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SVp-Gz-MTG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i2-c8-Oso">
+                                <rect key="frame" x="20" y="500" width="374" height="46.5"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" red="0.87733071730000001" green="0.09963183515" blue="0.1208445708" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <size key="shadowOffset" width="4" height="2"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pq-k5-kN7">
+                                <rect key="frame" x="20" y="554.5" width="374" height="233.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="25"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="4" height="1"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZF1-5R-Aff"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7i2-c8-Oso" firstAttribute="top" secondItem="ZF1-5R-Aff" secondAttribute="top" constant="500" id="88h-Od-yJ8"/>
+                            <constraint firstItem="ZF1-5R-Aff" firstAttribute="trailing" secondItem="8Pq-k5-kN7" secondAttribute="trailing" constant="20" id="8oW-5J-v5Z"/>
+                            <constraint firstAttribute="bottom" secondItem="SVp-Gz-MTG" secondAttribute="bottom" id="B18-nN-bvj"/>
+                            <constraint firstItem="SVp-Gz-MTG" firstAttribute="leading" secondItem="ZF1-5R-Aff" secondAttribute="leading" id="BVr-f3-fEa"/>
+                            <constraint firstItem="ZF1-5R-Aff" firstAttribute="trailing" secondItem="7i2-c8-Oso" secondAttribute="trailing" constant="20" id="BbM-YY-OVP"/>
+                            <constraint firstItem="8Pq-k5-kN7" firstAttribute="leading" secondItem="ZF1-5R-Aff" secondAttribute="leading" constant="20" id="Kns-nK-bWS"/>
+                            <constraint firstItem="7i2-c8-Oso" firstAttribute="leading" secondItem="ZF1-5R-Aff" secondAttribute="leading" constant="20" id="SQX-aY-6rV"/>
+                            <constraint firstItem="7i2-c8-Oso" firstAttribute="centerX" secondItem="2h8-8g-8ix" secondAttribute="centerX" id="cbr-Wx-Aur"/>
+                            <constraint firstItem="ZF1-5R-Aff" firstAttribute="bottom" secondItem="8Pq-k5-kN7" secondAttribute="bottom" constant="20" id="e7R-Pb-png"/>
+                            <constraint firstItem="8Pq-k5-kN7" firstAttribute="top" secondItem="7i2-c8-Oso" secondAttribute="bottom" constant="8" symbolic="YES" id="esN-aY-bpi"/>
+                            <constraint firstItem="SVp-Gz-MTG" firstAttribute="top" secondItem="ZF1-5R-Aff" secondAttribute="top" id="hea-kP-Ahc"/>
+                            <constraint firstItem="ZF1-5R-Aff" firstAttribute="trailing" secondItem="SVp-Gz-MTG" secondAttribute="trailing" id="sQD-DR-sJj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLb" destination="8Pq-k5-kN7" id="lnl-yu-71d"/>
+                        <outlet property="img" destination="SVp-Gz-MTG" id="7JF-g0-DSl"/>
+                        <outlet property="nameLb" destination="7i2-c8-Oso" id="Rom-Xh-hbc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U0D-LA-d4v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902.89855072463774" y="57.589285714285708"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="eXi-qW-0VJ"/>
+    </inferredMetricsTieBreakers>
     <resources>
-        <image name="433-4338166_thor-png-image-with-transparent-background-thor-marvel" width="820" height="820"/>
         <image name="unnamed" width="512" height="206"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

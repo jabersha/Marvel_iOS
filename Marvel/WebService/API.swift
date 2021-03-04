@@ -20,10 +20,10 @@ class API{
             parameters["ts"] = "1"
             parameters["apikey"] = "a483c4863e16947858e3015be24d081f"
             parameters["hash"] = "d209e8995ad3ec568be381ca92591ba2"
-            parameters["limit"] = "10"
+            parameters["limit"] = "15"
         
             if from != nil{
-                parameters["offset"] = "\(10+from!)"
+                parameters["offset"] = "\(15+from!)"
             } else {
                 parameters["offset"] = "0"
             }
