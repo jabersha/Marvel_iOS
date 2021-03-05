@@ -21,11 +21,19 @@ class DescriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
+        if UIDevice.current.userInterfaceIdiom == .phone{
+            
+            self.hero.isEnabled = true
+            nameLb.hero.id = "name"
+            img.hero.id = "img"
+            descriptionLb.hero.modifiers = [.cascade]
+            
+        }
+
+
         
-        self.hero.isEnabled = true
-        nameLb.hero.id = "name"
-        img.hero.id = "img"
-        descriptionLb.hero.modifiers = [.cascade]
         
         nameLb.text = name
         if descriptionCharacters != ""{

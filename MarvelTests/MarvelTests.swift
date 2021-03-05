@@ -8,6 +8,8 @@
 import XCTest
 @testable import Marvel
 
+var view = ViewController()
+
 class MarvelTests: XCTestCase {
 
     override func setUpWithError() throws {

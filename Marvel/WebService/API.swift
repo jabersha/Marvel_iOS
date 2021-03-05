@@ -14,7 +14,7 @@ class API{
     
     func requestData(from: Int?, completion: @escaping (_ result: Entry) -> ()){
             
-        var teste = [Entry]()
+        var dados = [Entry]()
 
             var parameters:Parameters = [String : Any]()
             parameters["ts"] = "1"
@@ -39,7 +39,7 @@ class API{
                     do {
                         let decoder = JSONDecoder()
                         let allData = try decoder.decode(Entry.self, from: response.data!)
-                        teste.append(allData)
+                        dados.append(allData)
                         completion(allData)
 
                         
