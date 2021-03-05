@@ -4,6 +4,6 @@ Projeto acessando a API "developer.marvel.com" para coletar e exibir dados dos P
 Utilizando as seguintes tecnologias:
 
 Swift 5
-CoreData
 Alamofire
 CocoaPods
+Hero Transitions/Hero
