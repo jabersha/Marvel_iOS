@@ -136,6 +136,14 @@
                                     <constraint firstAttribute="height" constant="95" id="yQh-Pi-cQR"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="shN-ac-aJh">
+                                <rect key="frame" x="182" y="423" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BcP-6c-QI9"/>
+                                    <constraint firstAttribute="width" constant="50" id="Wqq-Pt-0v3"/>
+                                </constraints>
+                                <color key="color" red="0.87733071730000001" green="0.09963183515" blue="0.1208445708" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
@@ -143,9 +151,11 @@
                             <constraint firstItem="ihI-Er-T31" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Amf-ER-YYO"/>
                             <constraint firstItem="tcm-vC-0ry" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CX5-pH-i1l"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tcm-vC-0ry" secondAttribute="bottom" constant="22" id="Cfe-4Q-meW"/>
+                            <constraint firstItem="shN-ac-aJh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HaB-TZ-h7h"/>
                             <constraint firstItem="mbE-z5-0YA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NPI-w4-Abg"/>
                             <constraint firstItem="tcm-vC-0ry" firstAttribute="top" secondItem="mbE-z5-0YA" secondAttribute="bottom" constant="8" symbolic="YES" id="Sdn-9C-iJW"/>
                             <constraint firstItem="mbE-z5-0YA" firstAttribute="top" secondItem="ihI-Er-T31" secondAttribute="bottom" constant="8" symbolic="YES" id="W8p-vL-TfJ"/>
+                            <constraint firstItem="shN-ac-aJh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WIZ-gQ-yB2"/>
                             <constraint firstItem="ihI-Er-T31" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gyW-rN-uV9"/>
                             <constraint firstItem="mbE-z5-0YA" firstAttribute="centerX" secondItem="tcm-vC-0ry" secondAttribute="centerX" id="hpw-Mp-NtJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mbE-z5-0YA" secondAttribute="trailing" id="kyI-QR-lBs"/>
@@ -155,6 +165,7 @@
                     <connections>
                         <outlet property="Collection" destination="mbE-z5-0YA" id="UMh-Sk-pXj"/>
                         <outlet property="Tabela" destination="tcm-vC-0ry" id="FLL-OC-IWv"/>
+                        <outlet property="loader" destination="shN-ac-aJh" id="gb8-Rg-3t9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
